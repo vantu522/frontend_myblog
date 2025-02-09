@@ -1,4 +1,5 @@
 import { Outlet, Link, useLocation } from 'react-router-dom'
+import Header from '../components/Header/header'
 
 const HomeLayout = () => {
     const location = useLocation()
@@ -12,33 +13,7 @@ const HomeLayout = () => {
     return (
       <div className="min-h-screen flex flex-col">
         {/* Header */}
-        <header className="bg-white shadow-sm w-full">
-          <nav className="max-w-7xl mx-auto px-8">
-            <div className="flex h-16">
-              {/* Logo & Navigation */}
-              <div className="flex items-center">
-                <div className="flex-shrink-0">
-                  <span className="text-xl font-bold">Logo</span>
-                </div>
-                <div className="ml-6 flex space-x-8">
-                  {menuItems.map((item) => (
-                    <Link
-                      key={item.path}
-                      to={item.path}
-                      className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
-                        location.pathname === item.path
-                          ? 'border-blue-500 text-gray-900'
-                          : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                      }`}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </nav>
-        </header>
+      <Header></Header>
   
         {/* Main Content */}
         <main className="flex-1">
