@@ -8,8 +8,8 @@ const Header: React.FC = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
-          <Link to="/" className="text-2xl font-bold">
-            Dhop Sports
+          <Link to="/" className="text-2xl font-bold ">
+            Dhop Sport
           </Link>
         </div>
 
