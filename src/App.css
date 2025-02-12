@@ -7,7 +7,7 @@ App-specific custom styles
 
 .main-content {
   @apply flex-1;
-}
+} 
 
 /* Form styles */
 .form-input {
