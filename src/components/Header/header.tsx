@@ -108,7 +108,7 @@ const Header: React.FC = () => {
                   className="block py-2 hover:text-blue-600 transition duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Home
+                  Trang chủ
                 </Link>
               </li>
               <li>
@@ -117,7 +117,7 @@ const Header: React.FC = () => {
                   className="block py-2 hover:text-blue-600 transition duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Product
+                  Blog
                 </Link>
               </li>
               <li>
@@ -126,7 +126,7 @@ const Header: React.FC = () => {
                   className="block py-2 hover:text-blue-600 transition duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  About
+                  About 
                 </Link>
               </li>
               <li>
@@ -135,7 +135,7 @@ const Header: React.FC = () => {
                   className="block py-2 hover:text-blue-600 transition duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Contacts
+                  English
                 </Link>
               </li>
             </ul>
