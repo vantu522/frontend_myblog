@@ -11,7 +11,7 @@ const HomeLayout = () => {
   
         {/* Main Content */}
         <main className="flex-1">
-          <div className="max-w-7xl mx-auto py-6 px-8">
+          <div className="">
             <Outlet />
           </div>
         </main>

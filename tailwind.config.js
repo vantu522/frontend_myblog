@@ -56,7 +56,7 @@ export default {
       },
       fontFamily: {
         custom: ['"Kodchasan"', 'sans-serif'],
-        test:['"Montserrat"', 'sans-serif'] 
+        test:['"Montserrat"', 'sans-serif'],
       }
     }
   },

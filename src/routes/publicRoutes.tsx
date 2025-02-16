@@ -1,14 +1,15 @@
 import { RouteObject } from 'react-router-dom'
+import HomePage from '../pages/user/HomePage'
 
 // Import your public pages here
-const Home = () => <div>Home Page</div>
+
 const About = () => <div>About Page</div>
 const Contact = () => <div>Contact Page</div>
 
 const publicRoutes: RouteObject[] = [
   {
     path: '', // This will be /
-    element: <Home />
+    element: <HomePage  />
   },
   {
     path: 'about', // This will be /about

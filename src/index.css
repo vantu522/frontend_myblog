@@ -1,16 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
+
+
+
 html {
   line-height: 1.2;
   height: 100%;
+  font-family: 'Josefin Sans', serif;
+  font-weight: 200;
 }
 
 body {
-  font-family: 'Montserrat', serif;
-  font-weight: 400;
+  font-family: 'Josefin Sans', serif;
+  font-weight: 200;
 }
+
 
 @layer components {
   .text-gradient {
