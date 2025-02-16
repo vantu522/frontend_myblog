@@ -4,6 +4,7 @@ import { FaSearch } from "react-icons/fa"
 import { Menu, X } from "lucide-react"
 import { useState } from "react"
 
+
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -48,23 +49,21 @@ const Header: React.FC = () => {
             <ul className="flex gap-8 uppercase font-medium">
               <li>
                 <Link to="/" className="hover:text-blue-600 transition duration-300">
-                  Home
+                  Trang chủ
                 </Link>
               </li>
               <li>
                 <Link to="/product" className="hover:text-blue-600 transition duration-300">
-                  Product
+                  Blog
                 </Link>
               </li>
               <li>
                 <Link to="/about" className="hover:text-blue-600 transition duration-300">
-                  About
+                  Liên hệ
                 </Link>
               </li>
               <li>
-                <Link to="/contacts" className="hover:text-blue-600 transition duration-300">
-                  Contacts
-                </Link>
+                  Tiếng Anh
               </li>
             </ul>
           </nav>
