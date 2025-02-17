@@ -10,7 +10,7 @@ const Header: React.FC = () => {
 
   return (
     <header className="text-black relative">
-      <div className="container mx-auto px-4 md:px-8">
+      <div className="container mx-auto px-4 md:px-20">
         <div className="flex items-center justify-between py-4">
           {/* Logo - Center on mobile, left on desktop */}
           <div className="md:order-2 text-center">
@@ -46,7 +46,7 @@ const Header: React.FC = () => {
 
           {/* Navigation - Hidden on mobile, shown on desktop */}
           <nav className="hidden md:flex md:order-3 md:flex-1 md:justify-end">
-            <ul className="flex gap-8 uppercase font-medium">
+            <ul className="flex gap-10 uppercase font-medium">
               <li>
                 <Link to="/" className="hover:text-blue-600 transition duration-300">
                   Trang chủ
