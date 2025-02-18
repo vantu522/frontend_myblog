@@ -49,21 +49,21 @@ const Header: React.FC = () => {
             <ul className="flex gap-10 uppercase font-medium">
               <li>
                 <Link to="/" className="hover:text-blue-600 transition duration-300">
-                  Trang chủ
+                  Home
                 </Link>
               </li>
               <li>
-                <Link to="/product" className="hover:text-blue-600 transition duration-300">
+                <Link to="/blog-me" className="hover:text-blue-600 transition duration-300">
                   Blog
                 </Link>
               </li>
               <li>
                 <Link to="/about" className="hover:text-blue-600 transition duration-300">
-                  Liên hệ
+                  About
                 </Link>
               </li>
               <li>
-                  Tiếng Anh
+                  Vietnam
               </li>
             </ul>
           </nav>

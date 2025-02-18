@@ -39,7 +39,7 @@ const HomePage = () => {
                 </div>
               </div>
               {/* Nội dung bài viết */}
-              <div className="py-5">
+              <div className="py-5 cursor-pointer">
                 <h1 className=" uppercase">
                   <b>PLAYING WITH PATTERNS</b>
                 </h1>
@@ -94,6 +94,7 @@ const HomePage = () => {
           <ImageSlider images={images}/>
 
       </div>
+
     </div>
   );
 };
