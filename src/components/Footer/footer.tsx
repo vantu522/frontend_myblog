@@ -34,6 +34,7 @@ const Footer: React.FC = () => {
                                 <Mail size={16} />
                                 tudgvan2305@gmail.com
                             </p>
+                            <a href="/admin/login" className="flex items-center gap-2">Đăng bài</a>
                         </div>
                     </div>
 

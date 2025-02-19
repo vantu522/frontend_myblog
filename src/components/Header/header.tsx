@@ -3,11 +3,14 @@ import { Link } from "react-router-dom"
 import { FaSearch } from "react-icons/fa"
 import { Menu, X } from "lucide-react"
 import { useState } from "react"
+import { API_ENDPOINT } from "../../configs/apiConfig"
 
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  console.log(API_ENDPOINT.BASE)
 
+ 
   return (
     <header className="text-black relative">
       <div className="container mx-auto px-4 md:px-20">

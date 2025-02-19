@@ -24,7 +24,9 @@ const publicRoutes: RouteObject[] = [
   {
     path:'blog-me',
     element: <Blog/>
-  }
+  },
+  
+ 
 ]
 
 export default publicRoutes
