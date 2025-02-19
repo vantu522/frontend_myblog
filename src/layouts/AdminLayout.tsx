@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Outlet, Link, useNavigate, useLocation } from 'react-router-dom'
 import { LayoutDashboard, Users, Package, LogOut, ChevronLeft, ChevronRight } from 'lucide-react'
 
@@ -6,16 +6,24 @@ const AdminLayout = () => {
     const [isCollapsed, setIsCollapsed] = useState(false)
     const navigate = useNavigate()
     const location = useLocation()
-  
+
+    useEffect(() =>{
+      const token = localStorage.getItem('token')
+      if(!token){
+        
+        navigate('/admin/login')
+      }
+    },[navigate])
+
     const menuItems = [
       { path: '/admin', icon: <LayoutDashboard size={20} />, label: 'Dashboard' },
-      { path: '/admin/users', icon: <Users size={20} />, label: 'Users' },
-      { path: '/admin/products', icon: <Package size={20} />, label: 'Products' }
+      { path: '/admin/posts', icon: <Users size={20} />, label: 'Posts' },
+      { path: '/admin/#', icon: <Package size={20} />, label: 'Settings' }
     ]
   
     const handleLogout = () => {
-      // Add your logout logic here
-      navigate('/login')
+      localStorage.removeItem('token')
+      navigate('/admin/login')
     }
   
     return (
@@ -53,10 +61,10 @@ const AdminLayout = () => {
           </nav>
   
           {/* Logout Button */}
-          <div className="absolute bottom-4 w-full px-4">
+          <div className="absolute bottom-4 px-4">
             <button
               onClick={handleLogout}
-              className="flex items-center p-3 w-full rounded-lg hover:bg-red-50 text-red-600"
+              className="flex items-center p-3  rounded-lg hover:bg-red-50 text-red-600"
             >
               <LogOut size={20} />
               {!isCollapsed && <span className="ml-3">Logout</span>}

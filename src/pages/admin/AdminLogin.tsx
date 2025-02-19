@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { login } from "../../service/authService";
+import {toast} from "react-toastify";
 
 const AdminLogin = () => {
   const [email, setEmail] = useState("");
@@ -14,14 +15,15 @@ const AdminLogin = () => {
   
     if (!email || !password) {
       setError("Vui lòng nhập cả email và mật khẩu.");
+      
       return;
     }
   
     try {
       const data = await login(email, password);
       console.log("Đăng nhập thành công:", data);
-  
-      alert("Đăng nhập thành công!");
+      
+      toast.success("Đăng nhập thành công!");
       window.location.href = "/admin"; // Chuyển hướng sau khi đăng nhập
     } catch (err) {
       setError("Đăng nhập thất bại, vui lòng kiểm tra lại email/mật khẩu.");
