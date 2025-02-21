@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react"
 import { getAllPosts, type postResponse } from "../../service/postService"
-import { EyeIcon, PencilIcon, TrashIcon } from "@heroicons/react/24/outline"
+import { EyeIcon, PencilIcon, TrashIcon, PlusIcon } from "@heroicons/react/24/outline"
 
 const PostList = () => {
   const [posts, setPosts] = useState<postResponse[]>([])
@@ -29,7 +29,15 @@ const PostList = () => {
 
   return (
     <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Danh sách bài viết</h1>
+       <div className="flex justify-between items-center mb-4"></div>
+          <h1 className="text-2xl font-bold mb-4">Danh sách bài viết</h1>
+          <button 
+            className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded flex items-center"
+            onClick={() => console.log("Thêm bài viết mới")}
+          >
+            <PlusIcon className="h-5 w-5 mr-1" />
+            Thêm bài viết
+          </button>
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white border border-gray-300">
           <thead>

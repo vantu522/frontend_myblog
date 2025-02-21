@@ -17,8 +17,8 @@ const AdminLayout = () => {
 
     const menuItems = [
       { path: '/admin', icon: <LayoutDashboard size={20} />, label: 'Dashboard' },
-      { path: '/admin/posts', icon: <Users size={20} />, label: 'Posts' },
-      { path: '/admin/#', icon: <Package size={20} />, label: 'Settings' }
+      { path: '/admin/posts', icon: <Users size={20} />, label: 'Quản lý bài viết' },
+      { path: '/admin/#', icon: <Package size={20} />, label: 'Cài đặt' }
     ]
   
     const handleLogout = () => {
@@ -67,7 +67,7 @@ const AdminLayout = () => {
               className="flex items-center p-3  rounded-lg hover:bg-red-50 text-red-600"
             >
               <LogOut size={20} />
-              {!isCollapsed && <span className="ml-3">Logout</span>}
+              {!isCollapsed && <span className="ml-3">Đăng xuất</span>}
             </button>
           </div>
         </aside>
