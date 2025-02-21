@@ -1,9 +1,7 @@
-"use client"
 
 import { useEffect, useState } from "react"
 import { getAllPosts, type postResponse } from "../../service/postService"
 import { EyeIcon, PencilIcon, TrashIcon } from "@heroicons/react/24/outline"
-import { API_ENDPOINT } from "../../configs/apiConfig"
 
 const PostList = () => {
   const [posts, setPosts] = useState<postResponse[]>([])
@@ -14,6 +12,7 @@ const PostList = () => {
     const fetchPosts = async () => {
       try {
         const data = await getAllPosts()
+        console.log(data)
         setPosts(data)
       } catch (err) {
         setError("Không thể tải danh sách bài viết.")
@@ -49,7 +48,7 @@ const PostList = () => {
                 <tr key={post.id} className="hover:bg-gray-50">
                   <td className="py-2 px-4 border-b">
                     <img
-                      src={`${API_ENDPOINT.BASE}/${API_ENDPOINT.POST.GETALLPOST}/${post.image}`} 
+                      src={post.image}
                       alt={post.title}
                       className="w-12 h-12 object-cover rounded"
                     />

@@ -23,13 +23,10 @@ const About = () => {
                 </div>
                 <div className="mt-6 text-gray-700 text-sm">
                   <p>
-                    Welcome to my about page! I'm a passionate web developer with experience in building modern,
-                    responsive web applications. I love working with React, Next.js, and Tailwind CSS to create beautiful
-                    and functional user interfaces.
+                    Xin chào mọi người nhé
                   </p>
                   <p className="mt-4">
-                    When I'm not coding, you can find me exploring new technologies, contributing to open-source projects,
-                    or enjoying a good cup of coffee while reading tech blogs.
+                   Tôi có tính cách hoà đồng thân thiện, nhiệt tình với mọi người xung quanh tôi
                   </p>
                 </div>
                 <div className="mt-6">
