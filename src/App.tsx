@@ -13,7 +13,6 @@ const AppRoutes = () => {
 const App = () => {
   return (
     <BrowserRouter>
-  
       <AppRoutes  />
     </BrowserRouter>
   )

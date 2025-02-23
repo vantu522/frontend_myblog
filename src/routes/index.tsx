@@ -4,6 +4,7 @@ import adminRoutes from './adminRoutes'
 import publicRoutes from './publicRoutes'
 import Login from '../pages/Login.tsx'
 import AdminLayout from '../layouts/AdminLayout.tsx'
+import loginRoutes from './loginRoutes.tsx'
 
 const routes: RouteObject[] = [
   {

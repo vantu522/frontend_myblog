@@ -1,7 +1,7 @@
 export const API_ENDPOINT = {
     BASE: import.meta.env.VITE_API_URL,
     AUTH:{
-        LOGIN:'login'
+        LOGIN:'auth/login'
     },
     POST:{
         GETALLPOST:'post'
