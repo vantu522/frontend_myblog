@@ -25,6 +25,7 @@ const publicRoutes: RouteObject[] = [
     path:'blog-me',
     element: <Blog/>
   },
+
   
  
 ]

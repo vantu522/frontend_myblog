@@ -6,12 +6,12 @@ const AdminLayout = () => {
     const [isCollapsed, setIsCollapsed] = useState(false)
     const navigate = useNavigate()
     const location = useLocation()
-
+ 
     useEffect(() =>{
       const token = localStorage.getItem('token')
-      if(!token){
+      if(!token){ 
         
-        navigate('/admin/login')
+        navigate('/login')
       }
     },[navigate])
 
@@ -23,7 +23,7 @@ const AdminLayout = () => {
   
     const handleLogout = () => {
       localStorage.removeItem('token')
-      navigate('/admin/login')
+      navigate('/login')
     }
   
     return (

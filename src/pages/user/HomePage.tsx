@@ -43,7 +43,7 @@ const HomePage = () => {
           src={decor}
           alt="Decor"
           className="max-h-screen w-full object-contain"
-        />
+        /> 
       </div>
 
       <div className="mt-5 border space-y-6">
