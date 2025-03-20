@@ -1,7 +1,7 @@
 // components/posts/CreatePost.tsx
 import PostForm from './PostForm';
 import React from 'react';
-import { Button } from '../ui/button';
+import { Button } from '@/components/ui/button';
 import { Post } from '@/service/type.ts/post';
 
 export const CreatePost = () => {

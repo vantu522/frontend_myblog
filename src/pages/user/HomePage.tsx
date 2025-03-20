@@ -3,14 +3,14 @@ import logo from "../../assets/images/decor-home.jpg";
 import ImageSlider from "../../components/Slider";
 import Chill from '../../assets/images/chill.webp'
 import { useState,useEffect } from "react";
-import { getAllPosts, type postResponse } from "../../service/postService"
+import { getAllPosts } from "../../service/postService"
 import moment from 'moment'
-
+import { Post } from "@/service/type.ts/post";
 
 
 const HomePage = () => {
   const images =[logo,decor,logo,logo,decor,Chill];
-  const [posts, setPosts] = useState<postResponse[]>([])
+  const [posts, setPosts] = useState<Post[]>([])
 
   const [loading, setLoading] = useState<boolean>(true)
   const [error, setError] = useState<string | null>(null)

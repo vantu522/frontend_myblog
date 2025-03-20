@@ -4,6 +4,7 @@ export const API_ENDPOINT = {
         LOGIN:'auth/login'
     },
     POST:{
-        GETALLPOST:'post'
+        GETALLPOST:'post',
+        CREATEPOST:'post/create-post'
     }
 }

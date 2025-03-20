@@ -1,7 +1,8 @@
 import { RouteObject } from 'react-router-dom'
-import PostList from '../pages/admin/PostList'
+import PostList from '@/pages/admin/posts/PostList'
 import AdminDashboard from '../pages/admin/AdminDashboard'
 import PrivateRoute from '../components/PrivateRoutes'
+import PostDetail from '@/pages/user/PostDetail'
 // Import your admin pages here
 const adminRoutes: RouteObject[] = [
  
