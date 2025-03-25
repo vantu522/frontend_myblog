@@ -1,4 +1,8 @@
 import decor from "../../assets/images/BAN-LAM-VIEC-TOI-GIAN-3.jpg.webp";
+import anh1 from "../../assets/images/tus.png";
+import anh2 from "../../assets/images/sat.png";
+import anh3 from "../../assets/images/computer.png";
+
 import logo from "../../assets/images/decor-home.jpg";
 import ImageSlider from "../../components/Slider";
 import Chill from '../../assets/images/chill.webp'
@@ -35,15 +39,29 @@ const HomePage = () => {
       if (error) return <p className="text-center py-4 text-red-500">{error}</p>
     
   
-
   return (
     <div>
-      <div className="w-full mt-0 flex items-center justify-center bg-white font-josefin">
+      <div className="relative w-full h-[500px]">
+        {/* Ảnh nền */}
+        <img src={anh1} alt="Decor" className="w-full h-[530px] object-cover" />
+
+        {/* Ảnh đè lên */}
         <img
-          src={decor}
-          alt="Decor"
-          className="max-h-screen w-full object-contain"
-        /> 
+          src={anh2}
+          alt="Overlay"
+          className="absolute w-[400px] bottom-0 right-0  opacity-100 animate-slideInFromRight "
+        />
+
+        <img
+          src={anh3}
+          alt="Overlay 2"
+          className="absolute bottom-0 left-[200px] w-[200px] opacity-0 animate-fadeIn"
+        />
+          <div className="absolute top-[60px]  left-[200px] text-black  space-y-2">
+            <h1 className="text-9xl font-bold font-italianno "><i>TBlog</i></h1>
+            <p className="font-italianno text-xl text-white  pt-5" ><i>Nơi chia sẻ cuộc sống đời thường, kinh nghiệm cá nhân,<br />tâm sự và niềm hạnh phúc của Dương Văn Tú</i></p>
+            
+        </div>
       </div>
 
       <div className="mt-5 border space-y-6">

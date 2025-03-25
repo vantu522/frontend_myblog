@@ -7,6 +7,7 @@ export default {
   		container: {
   			center: true
   		},
+		
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
@@ -62,12 +63,29 @@ export default {
   			test: [
   				'Montserrat"',
   				'sans-serif'
-  			]
+  			],
+			  italianno: ['Italianno', 'cursive'],
   		},
   		screens: {
   			xs: '480px',
   			'2xl': '1440px'
-  		}
+  		},
+		keyframes: {
+			fadeIn: {
+			  "0%": { opacity: "0" },
+			  "100%": { opacity: "1" },
+			},
+			slideInFromRight: {
+				'0%': { opacity: 0, transform: 'translateX(100%)' },
+				'100%': { opacity: 1, transform: 'translateX(0)' }
+			  }
+			
+		  },
+		animation: {
+			fadeIn: "fadeIn 1s ease-in-out forwards",
+			slideInFromRight:'slideInFromRight 1s ease-out'
+		  },
+		
   	}
   },
   plugins: [require('tailwindcss-animate')]

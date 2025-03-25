@@ -16,7 +16,7 @@ const Header: React.FC = () => {
           {/* Logo - Center on mobile, left on desktop */}
           <div className="md:order-2 text-center">
             <Link to="/" className="text-2xl md:text-3xl font-bold cursor-pointer">
-              TSHOPP
+              TBLOG
             </Link>
           </div>
 
