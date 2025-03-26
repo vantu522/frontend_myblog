@@ -3,6 +3,7 @@ import PostList from '@/pages/admin/posts/PostList'
 import AdminDashboard from '../pages/admin/AdminDashboard'
 import PrivateRoute from '../components/PrivateRoutes'
 import PostDetail from '@/pages/user/PostDetail'
+import PostForm from '@/pages/admin/posts/PostForm'
 // Import your admin pages here
 const adminRoutes: RouteObject[] = [
  
@@ -13,6 +14,7 @@ const adminRoutes: RouteObject[] = [
     children: [
       { path: "", element: <AdminDashboard /> },
       { path: "posts", element: <PostList /> },
+
     ],
   },
 ]

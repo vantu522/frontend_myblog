@@ -64,7 +64,8 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="mt-5 border space-y-6">
+      <div className="mt-14 border space-y-6">
+        <h1 className="text-center text-3xl">Bài viết nổi bật</h1>
         {posts.map((post) =>
             post.status === "public" && (
                  <div className="bg-white-300 flex  justify-center cursor-pointer  ">

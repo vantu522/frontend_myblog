@@ -1,74 +1,64 @@
-import { Modal, Form, Input, Button } from "antd";
-import { useEffect } from "react";
-import { Post } from "@/service/type.ts/post";
+import { Upload, Button, Form, Input, Select, message } from "antd";
+import { UploadOutlined } from "@ant-design/icons";
+import { useEffect, useState } from "react";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 interface PostFormProps {
-  isOpen: boolean;
-  onClose: () => void;
-  onSubmit: (data: Post) => Promise<void>;
-  initialData?: Post;
-  mode: "create" | "edit";
+  initialData?: any;
+  onSubmit: (formData: FormData) => void;
 }
 
-const PostForm: React.FC<PostFormProps> = ({ isOpen, onClose, onSubmit, initialData, mode }) => {
+const PostForm = ({ initialData, onSubmit }: PostFormProps) => {
   const [form] = Form.useForm();
+  const [file, setFile] = useState<File | null>(null);
+  const [content, setContent] = useState(initialData?.content || "");
 
   useEffect(() => {
     if (initialData) {
       form.setFieldsValue(initialData);
     } else {
       form.resetFields();
+      setFile(null);
+      setContent("");
     }
-  }, [initialData, form]);
+  }, [initialData]);
 
-  const handleSubmit = async () => {
-    try {
-      const values = await form.validateFields();
-      await onSubmit(values);
-      onClose();
-    } catch (error) {
-      console.error("Validation failed:", error);
-    }
+  const handleSubmit = (values: any) => {
+    const formData = new FormData();
+    formData.append("title", values.title);
+    formData.append("content", content);
+    formData.append("author", values.author);
+    formData.append("status", values.status);
+    if (file) formData.append("image", file);
+
+    onSubmit(formData);
   };
 
   return (
-    <Modal
-      title={mode === "create" ? "Thêm bài viết" : "Chỉnh sửa bài viết"}
-      open={isOpen}
-      onCancel={onClose}
-      onOk={handleSubmit}
-      destroyOnClose
-      centered
-      okText={mode === "create" ? "Tạo bài viết" : "Cập nhật"}
-      cancelText="Hủy"
-      maskClosable={false}
-    >
-      <Form form={form} layout="vertical">
-        <Form.Item
-          label="Tiêu đề"
-          name="title"
-          rules={[{ required: true, message: "Vui lòng nhập tiêu đề" }]}
-        >
-          <Input placeholder="Nhập tiêu đề" />
-        </Form.Item>
-
-        <Form.Item
-          label="Nội dung"
-          name="content"
-          rules={[{ required: true, message: "Vui lòng nhập nội dung" }]}
-        >
-          <Input.TextArea rows={4} placeholder="Nhập nội dung bài viết" />
-        </Form.Item>
-
-        <Form.Item
-          label="Tác giả"
-          name="author"
-          rules={[{ required: true, message: "Vui lòng nhập tên tác giả" }]}
-        >
-          <Input placeholder="Nhập tên tác giả" />
-        </Form.Item>
-      </Form>
-    </Modal>
+    <Form form={form} onFinish={handleSubmit} layout="vertical">
+      <Form.Item name="title" label="Tiêu đề" rules={[{ required: true, message: "Vui lòng nhập tiêu đề" }]}>
+        <Input />
+      </Form.Item>
+      <Form.Item name="content" label="Nội dung" rules={[{ required: true, message: "Vui lòng nhập nội dung" }]}>
+        <ReactQuill theme="snow" value={content} onChange={setContent}/>
+      </Form.Item>
+      <Form.Item name="author" label="Tác giả" rules={[{ required: true, message: "Vui lòng nhập tác giả" }]}>
+        <Input />
+      </Form.Item>
+      <Form.Item name="status" label="Trạng thái">
+        <Select defaultValue="public">
+          <Select.Option value="public">Công khai</Select.Option>
+          <Select.Option value="private">Riêng tư</Select.Option>
+        </Select>
+      </Form.Item>
+      <Form.Item label="Ảnh">
+        <Upload maxCount={1} beforeUpload={(file) => { setFile(file); return false; }}>
+          <Button icon={<UploadOutlined />}>Chọn ảnh</Button>
+        </Upload>
+      </Form.Item>
+      <Button  type="primary" htmlType="submit">Lưu</Button>
+    </Form>
   );
 };
 
