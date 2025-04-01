@@ -1,4 +1,4 @@
-import { Upload, Button, Form, Input, Select, message } from "antd";
+import { Upload, Button, Form, Input, Select } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import { useEffect, useState } from "react";
 import ReactQuill from "react-quill";
@@ -46,15 +46,16 @@ const PostForm = ({ initialData, onSubmit }: PostFormProps) => {
       <Form.Item name="author" label="Tác giả" rules={[{ required: true, message: "Vui lòng nhập tác giả" }]}>
         <Input />
       </Form.Item>
-      <Form.Item name="status" label="Trạng thái">
-        <Select defaultValue="public">
-          <Select.Option value="public">Công khai</Select.Option>
+      <Form.Item name="status" label="Trạng thái" initialValue="public">
+        <Select >
+          <Select.Option value="public" >Công khai</Select.Option>
           <Select.Option value="private">Riêng tư</Select.Option>
         </Select>
       </Form.Item>
       <Form.Item label="Ảnh">
         <Upload maxCount={1} beforeUpload={(file) => { setFile(file); return false; }}>
           <Button icon={<UploadOutlined />}>Chọn ảnh</Button>
+            {initialData?.image && !file && <p>Ảnh hiện tại: <img src={initialData.image}  className="w-12 h-12 object-cover rounded " />  </p>}
         </Upload>
       </Form.Item>
       <Button  type="primary" htmlType="submit">Lưu</Button>

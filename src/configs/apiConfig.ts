@@ -5,6 +5,6 @@ export const API_ENDPOINT = {
     },
     POST:{
         GETALLPOST:'post',
-        CREATEPOST:'post/create-post'
+        CREATEPOST:'post/create'
     }
 }

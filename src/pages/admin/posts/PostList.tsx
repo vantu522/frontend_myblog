@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Modal, message } from "antd";
-import { getAllPosts, createPost } from "@/service/postService";
+import { getAllPosts, createPost, updatePost, deletePost } from "@/service/postService";
 import { EyeIcon, PencilIcon, TrashIcon, PlusIcon } from "@heroicons/react/24/outline";
 import { Post } from "@/service/type.ts/post";
 import PostForm from "./PostForm";
@@ -48,7 +48,7 @@ const PostList = () => {
  const handleSubmit = async (formData: FormData) => {
   try {
     if (editingPost) {
-      // await updatePost(editingPost._id, formData);
+      await updatePost(editingPost._id, formData);
       message.success("Cập nhật bài viết thành công!");
     } else {
       await createPost(formData);
@@ -58,6 +58,15 @@ const PostList = () => {
     fetchPosts();
   } catch (error) {
     message.error("Có lỗi xảy ra!");
+  }
+};
+const handleDelete = async (id: string) => {
+  try {
+    await deletePost(id);  // Call the deletePost service
+    message.success("Bài viết đã được xóa.");
+    fetchPosts();  // Reload the list of posts
+  } catch (error) {
+    message.error("Có lỗi xảy ra khi xóa bài viết.");
   }
 };
 
@@ -112,6 +121,9 @@ const PostList = () => {
                 <td className="py-2 px-4 border-b flex justify-center space-x-2">
                   <button className="p-1 bg-yellow-500 text-white rounded hover:bg-yellow-600" onClick={() => handleOpenEditForm(post)}>
                     <PencilIcon className="h-4 w-4" />
+                  </button>
+                  <button className="p-1 bg-red-500 text-white rounded hover:bg-red-600" onClick={() => handleDelete(post._id)}>
+                    <TrashIcon className="h-4 w-4" />
                   </button>
                 </td>
               </tr>
