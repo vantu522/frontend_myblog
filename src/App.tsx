@@ -3,6 +3,7 @@ import routes from './routes'
 import './App.css'
 
 import "react-toastify/dist/ReactToastify.css";
+import PoeChatButton from './components/ChatBot';
 
 
 const AppRoutes = () => {
@@ -14,6 +15,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <AppRoutes  />
+      <PoeChatButton/>
     </BrowserRouter>
   )
 }

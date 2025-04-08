@@ -8,6 +8,8 @@ const HomeLayout = () => {
       <div className="min-h-screen flex flex-col">
         {/* Header */}
       <Header></Header>
+
+
   
         {/* Main Content */}
         <main className="flex-1">
